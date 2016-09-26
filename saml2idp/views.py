@@ -12,11 +12,11 @@ from django.shortcuts import render_to_response, redirect
 from django.template import RequestContext
 from django.views.decorators.csrf import csrf_exempt
 # saml2idp app imports:
-import saml2idp_metadata
-import exceptions
-import metadata
-import registry
-import xml_signing
+from . import saml2idp_metadata
+from . import exceptions
+from . import metadata
+from . import registry
+from . import xml_signing
 
 def _generate_response(request, processor):
     """
