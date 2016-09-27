@@ -27,7 +27,7 @@ def get_processor(dottedpath):
     sp_module, sp_classname = dottedpath[:dot], dottedpath[dot+1:]
     try:
         mod = import_module(sp_module)
-    except ImportError, e:
+    except ImportError as e:
         raise ImproperlyConfigured('Error importing processors %s: "%s"' % (sp_module, e))
     try:
         sp_class = getattr(mod, sp_classname)
