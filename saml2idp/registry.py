@@ -7,8 +7,8 @@ import logging
 from django.utils.importlib import import_module
 from django.core.exceptions import ImproperlyConfigured
 # Local imports
-import exceptions
-import saml2idp_metadata
+from . import exceptions
+from . import saml2idp_metadata
 
 # Setup logging
 logger = logging.getLogger(__name__)
@@ -46,7 +46,7 @@ def find_processor(request):
         try:
             if proc.can_handle(request):
                 return proc
-        except exceptions.CannotHandleAssertion, e:
+        except exceptions.CannotHandleAssertion as e:
             # Log these, but keep looking.
             logger.debug('%s %s' % (proc, e))
     raise exceptions.CannotHandleAssertion('None of the processors in SAML2IDP_REMOTES could handle this request.')

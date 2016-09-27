@@ -1,7 +1,7 @@
 from django.conf.urls import *
 
 from saml2idp.views import descriptor, login_begin, login_init, login_process, logout
-from metadata import get_deeplink_resources
+from .metadata import get_deeplink_resources
 
 def deeplink_url_patterns(
     prefix='',

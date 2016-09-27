@@ -3,8 +3,8 @@ Functions for creating XML output.
 """
 import logging
 import string
-from xml_signing import get_signature_xml
-from xml_templates import ATTRIBUTE, ATTRIBUTE_STATEMENT, \
+from .xml_signing import get_signature_xml
+from .xml_templates import ATTRIBUTE, ATTRIBUTE_STATEMENT, \
     ASSERTION_GOOGLE_APPS, ASSERTION_SALESFORCE, ASSERTION_ZENDESK, RESPONSE, SUBJECT
 
 def _get_attribute_statement(params):
